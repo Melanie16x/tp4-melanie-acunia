@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
+const ejemploRuta = require('./routes/routes')
 
 // inicializaciones
 const app = express();
@@ -17,21 +18,7 @@ app.use(cors());
 
 // RUTAS
 
-app.get('/', function (request, response) {
-    response.send('GET');
-})
-
-app.post('/',function (request, response) {
-    response.send('POST');
-})
-
-app.put('/', function (request, response) {
-    response.send("PUT");
-})
-
-app.delete('/',function (request, response) {
-    response.send("DELETE");
-})
+app.use('/ejemplo', ejemploRuta);
 
 // servidor en escucha
-app.listen(port, () => console.log(`el servidor esta corriendo en el puerto ${port}`))
+app.listen(port, () => console.log(`el servidor esta corriendo en el puerto ${port}`));
