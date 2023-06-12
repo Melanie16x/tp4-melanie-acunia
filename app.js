@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
-const ejemploRuta = require('./routes/routes')
+const ejemploRuta = require('./routes/routes');
 
 // inicializaciones
 const app = express();
@@ -18,7 +18,7 @@ app.use(cors());
 
 // RUTAS
 
-app.use('/ejemplo', ejemploRuta);
+app.use('/', ejemploRuta);
 
 // servidor en escucha
 app.listen(port, () => console.log(`el servidor esta corriendo en el puerto ${port}`));
